@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var texto = "Texto"
+    
     var body: some View {
         ZStack
         {
@@ -37,9 +39,26 @@ struct ContentView: View {
                         Text("Crie sua conta")
                             .font(.largeTitle)
                             .fontWeight(.semibold)
-                            .padding(.trailing, 125)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.top, 20)
+                            .padding(.leading, 20)
+                        
+                        Text("E-mail")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top, 20)
+                            .padding(.leading, 20)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        
+                            TextField(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/, text: $texto)
+                            .padding(.horizontal, 24)
+                            .padding(.vertical, 8)
+                            .background(Color(uiColor: .systemGray6))
+                            .cornerRadius(12)
+                            
                         Spacer()
+                        
+                            
                     }
                 }
                 .background(.white)
