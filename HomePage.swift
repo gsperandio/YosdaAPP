@@ -2,28 +2,20 @@ import SwiftUI
 
 struct HomePage: View {
     var body: some View {
-        ScrollView {
-            GeometryReader { geometry in
-                // Imagem no topo
-                Image("sua_imagem")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: geometry.size.width, height: 200)
-                    .clipped()
+        VStack(spacing: 0) {
+            Image(systemName: "atom") // Substitua "atom" pelo nome do ícone desejado
+                .resizable()
+                .scaledToFill()
+                .frame(height: 200)
+                .clipped()
 
-                // Lista que se sobrepõe à imagem
-                VStack {
-                    ForEach(1...20, id: \.self) { index in
-                        Text("Item \(index)")
-                            .font(.title)
-                            .padding()
-                    }
-                }
-                .background(Color.white)
-                .cornerRadius(20)
-                .offset(y: -100) // Ajuste a posição vertical conforme necessário
+            List(1...20, id: \.self) { index in
+                Text("Item \(index)")
+                    .font(.title)
+                    .padding()
             }
-            .frame(maxWidth: .infinity)
+            .background(Color.white)
+            .cornerRadius(20)
         }
         .background(Color.gray) // Cor de fundo da tela
         .ignoresSafeArea()
