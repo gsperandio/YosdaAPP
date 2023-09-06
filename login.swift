@@ -1,4 +1,3 @@
-
 //  ContentView.swift
 //  ExampleUI
 //
@@ -10,6 +9,7 @@ import SwiftUI
 struct ContentView: View {
     @State var texto = ""
     @State var senha = ""
+    @State var isToggled = false
     var body: some View {
         ZStack
         {
@@ -57,13 +57,23 @@ struct ContentView: View {
                             .border(.purple, width: 3)
                             .cornerRadius(6)
                             .padding(.horizontal)
+                        HStack{
+                            Text("Senha")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.top, 20)
+                                .padding(.leading, 20)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
                             
-                        Text("Senha")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.top, 20)
-                            .padding(.leading, 20)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                            Spacer()
+                            
+                            Text("Recuperar senha")
+                                .foregroundColor(.blue)
+                                .padding(.trailing, 20)
+                                .padding(.top, 20)
+                                .font(.system(size: 16))
+                                .foregroundColor(.secondary)
+                        }
                         
                         SecureField("***********", text: $senha)
                             .padding(.leading, 16)
@@ -72,10 +82,62 @@ struct ContentView: View {
                             .background(Color(uiColor: .systemGray6))
                             .cornerRadius(6)
                             .padding(.horizontal)
-                            
                         
-                        
+                        HStack{
+                            Text("Lembrar minha senha")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.top, 2)
+                                .padding(.leading, 20)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
                             
+                            Spacer()
+                            
+                            Toggle("", isOn: $isToggled)
+                                .padding()
+                        }
+                        
+                        Button("Criar conta"){
+                            
+                        }
+                        .padding(.vertical, 14)
+                        .frame(maxWidth: .infinity)
+                        .background(.indigo)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                        .padding()
+                        .bold()
+                        
+                        Button{
+                            
+                        } label: {
+                            Label("Continuar com Apple", systemImage: "apple.logo")
+                                .bold()
+                        }
+                        .padding(.vertical, 14)
+                        .frame(maxWidth: .infinity)
+                        .background(.black)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                        .padding()
+                        
+                        HStack{
+                            Text("Já possui uma conta?")
+                                .padding(.top, 20)
+                                .padding(.leading, 20)
+                                .font(.system(size: 16))
+                                .foregroundColor(.secondary)
+                            
+                            
+                            Text("Entre")
+                                .foregroundColor(.blue)
+                                .padding(.trailing, 20)
+                                .padding(.top, 20)
+                                .font(.system(size: 18))
+                                .foregroundColor(.secondary)
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        
                         Spacer()
                         
                             
