@@ -18,7 +18,7 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 HStack{
-                    Image(systemName: "circle.hexagongrid")
+                    Image(systemName: "app.gift.fill")
                         .imageScale(.large)
                         .font(.system(size: 70))
                         .foregroundColor(.white)
@@ -54,8 +54,8 @@ struct ContentView: View {
                             .padding(.leading, 16)
                             .padding(.vertical, 8)
                             .background(Color(uiColor: .systemGray6))
-                            .border(.purple, width: 3)
-                            .cornerRadius(6)
+                            .border(.indigo, width: 3)
+                            .cornerRadius(4)
                             .padding(.horizontal)
                         HStack{
                             Text("Senha")
@@ -67,7 +67,7 @@ struct ContentView: View {
                             
                             Spacer()
                             
-                            Text("Recuperar senha")
+                            Button("Recuperar senha"){}
                                 .foregroundColor(.blue)
                                 .padding(.trailing, 20)
                                 .padding(.top, 20)
@@ -78,9 +78,9 @@ struct ContentView: View {
                         SecureField("***********", text: $senha)
                             .padding(.leading, 16)
                             .padding(.vertical, 8)
-                            .border(.purple, width: 3)
+                            .border(.indigo, width: 3)
                             .background(Color(uiColor: .systemGray6))
-                            .cornerRadius(6)
+                            .cornerRadius(4)
                             .padding(.horizontal)
                         
                         HStack{
@@ -129,7 +129,7 @@ struct ContentView: View {
                                 .foregroundColor(.secondary)
                             
                             
-                            Text("Entre")
+                            Button("Entre"){}
                                 .foregroundColor(.blue)
                                 .padding(.trailing, 20)
                                 .padding(.top, 20)
