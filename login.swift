@@ -18,7 +18,7 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 HStack{
-                    Image(systemName: "app.gift.fill")
+                    Image(systemName: "atom")
                         .imageScale(.large)
                         .font(.system(size: 70))
                         .foregroundColor(.white)
