@@ -1,4 +1,4 @@
-//
+
 //  ContentView.swift
 //  ExampleUI
 //
@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var texto = "Texto"
-    
+    @State var texto = ""
+    @State var senha = ""
     var body: some View {
         ZStack
         {
@@ -18,7 +18,7 @@ struct ContentView: View {
             VStack {
                 Spacer()
                 HStack{
-                    Image(systemName: "moon.stars")
+                    Image(systemName: "circle.hexagongrid")
                         .imageScale(.large)
                         .font(.system(size: 70))
                         .foregroundColor(.white)
@@ -50,11 +50,31 @@ struct ContentView: View {
                             .font(.caption)
                             .foregroundColor(.secondary)
                         
-                            TextField(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/, text: $texto)
-                            .padding(.horizontal, 24)
+                        TextField("email@exemplo.", text: $texto)
+                            .padding(.leading, 16)
                             .padding(.vertical, 8)
                             .background(Color(uiColor: .systemGray6))
-                            .cornerRadius(12)
+                            .border(.purple, width: 3)
+                            .cornerRadius(6)
+                            .padding(.horizontal)
+                            
+                        Text("Senha")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top, 20)
+                            .padding(.leading, 20)
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+                        
+                        SecureField("***********", text: $senha)
+                            .padding(.leading, 16)
+                            .padding(.vertical, 8)
+                            .border(.purple, width: 3)
+                            .background(Color(uiColor: .systemGray6))
+                            .cornerRadius(6)
+                            .padding(.horizontal)
+                            
+                        
+                        
                             
                         Spacer()
                         
